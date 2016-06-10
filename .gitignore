@@ -1,0 +1,9 @@
+#project data
+.DS_Store
+.idea
+npm-debug.log
+node_modules
+.idea/workspace.xml
+
+#bundle files
+build

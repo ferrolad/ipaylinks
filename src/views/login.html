@@ -1,0 +1,107 @@
+<!DOCTYPE html >
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="renderer" content="webkit">
+    <title>iPaylinks - 您的信赖是我们永恒的追求</title>
+    <meta name="keywords" content="IpayLinks,跨境金融,跨境支付">
+    <meta name="descrption" content="iPayLinks 您可信赖的跨境金融专家，我们致力于跨境商业上下游生态圈体系，定制行业级解决方案和本地化支持服务，提供营销引擎和物流供应链引擎支持。一站式全方位服务 助力企业开拓全球市场，PCI-DSS认证 KYC准入 保证安全是我们的首要任务">
+    <meta name="author" content="iPayLinks denmark">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <link rel="shortcut icon" href="https://www.ipaylinks.com/wp-content/uploads/2015/05/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="../css/ipaylinks.css"/>
+    <style>
+        /*自定义样式*/
+    </style>
+</head>
+
+<body class="loginreg-font">
+<!-- 头部start -->
+<header class="header navbar navbar-fixed-top">
+    <div class="navbar-fixed-top hidden-xs header-top"></div>
+    <div class="container">
+        <div class="navbar-header">
+            <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="../views/index.html">
+                <img style="width: 100px;height: 25px" src="../images/ipaylinks.png" alt="ipaylinks"/>
+            </a>
+        </div>
+        <div class="navbar-collapse collapse ipay-pull-right" role="navigation">
+            <ul class="nav navbar-nav text-center">
+                <li class="login-first-reg"><span>第一次使用 ? </span><a href="../views/regist.html"> 立即注册</a></li>
+            </ul>
+        </div>
+    </div>
+</header>
+
+<!--主内容区-->
+<div class="main-content">
+    <div class="ipay-bg-login">
+        <div class="container">
+            <div class="row">
+                <form action="/login" class="pull-right col-sm-6 col-xs-12 text-center">
+                    <div class="login-form form-group">
+                        <div class="login-title">
+                            <span>登录</span>
+                        </div>
+                        <div class="input-group input-group-lg form-input-box">
+                            <label class="input-group-addon" for="email"><i class="fa fa-user ipay-icon-sty"></i></label>
+                            <input class="form-control ipay-input" type="email" id="email" name="email" placeholder="请输入邮箱地址" required/>
+                        </div>
+                        <div class="input-group input-group-lg form-input-box">
+                            <label class="input-group-addon" for="admin"><i class="fa fa-street-view ipay-icon-sty"></i></label>
+                            <input class="form-control ipay-input" type="text" id="admin" name="admin" placeholder="操作员" required/>
+                        </div>
+                        <div class="input-group input-group-lg form-input-box">
+                            <label class="input-group-addon" for="password"><i class="fa fa-lock ipay-icon-sty"></i></label>
+                            <input class="form-control ipay-input" type="password" id="password" name="password" placeholder="请输入密码" required/>
+                        </div>
+                        <div class="input-group input-group-lg form-input-box">
+                            <label class="input-group-addon" for="validatecode"><i class="fa icon-circle-lock"></i></label>
+                            <input class="form-control ipay-input ipay-input-validate" type="text" id="validatecode" name="validatecode" placeholder="请输入验证码" required/>
+                            <div class="ipay-validate-code"><img onclick="window.alert('ajax请求新的验证码base64编码和真正的验证码')" src="../images/validate_code.png" alt="换一换" title="换一换"/></i></div>
+                        </div>
+                        <input class="btn btn-primary ipay-form-btn" value="登录" type="submit"/>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="panel-footer">
+    <div class="container text-center">
+        <ul class="list-unstyled list-inline foot-nav">
+            <li><a href="./about.html" target="_blank">关于iPayLinks</a></li>
+            <li><a href="./contactus.html" target="_blank">联系我们</a></li>
+            <li><a href="./servicecentral.html" target="_blank">服务中心</a></li>
+            <li><a href="./securitycentral.html" target="_blank">安全中心</a></li>
+            <li>
+                <img style="width: 100px;height: 25px; margin-right:20px" src="../images/ipaylinks.png" alt="ipaylinks"/>
+                <span>Copyright©2014-2016 iPayLinks All Rights Reserved</span>
+            </li>
+        </ul>
+    </div>
+</footer>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="../js/jquery.min.js"></script>
+<!-- 引入 bootstrap -->
+<script rel="script" src="../js/bootstrap.min.js"></script>
+</body>
+</html>

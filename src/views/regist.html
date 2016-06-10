@@ -1,0 +1,366 @@
+<!DOCTYPE html >
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="renderer" content="webkit">
+    <title>iPaylinks - 您的信赖是我们永恒的追求</title>
+    <meta name="keywords" content="IpayLinks,跨境金融,跨境支付">
+    <meta name="descrption" content="iPayLinks 您可信赖的跨境金融专家，我们致力于跨境商业上下游生态圈体系，定制行业级解决方案和本地化支持服务，提供营销引擎和物流供应链引擎支持。一站式全方位服务 助力企业开拓全球市场，PCI-DSS认证 KYC准入 保证安全是我们的首要任务">
+    <meta name="author" content="iPayLinks denmark">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <link rel="shortcut icon" href="https://www.ipaylinks.com/wp-content/uploads/2015/05/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="../css/ipaylinks.css"/>
+    <style>
+        /*自定义样式*/
+    </style>
+</head>
+
+<body class="loginreg-font" style="background-color: rgba(244, 244, 244, 1);">
+<!-- 头部start -->
+<header class="header navbar navbar-fixed-top">
+    <div class="navbar-fixed-top hidden-xs header-top"></div>
+    <div class="container">
+        <div class="navbar-header">
+            <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <div class="navbar-brand">
+                <img style="width: 100px;height: 25px;display: inline-block" src="../images/ipaylinks.png" alt="ipaylinks"/>
+                <a class="ipay-home-title" href="../views/index.html">
+                    <span>首页</span>
+                </a>
+            </div>
+        </div>
+        <div class="navbar-collapse collapse ipay-pull-right" role="navigation">
+            <ul class="nav navbar-nav text-center">
+            </ul>
+        </div>
+    </div>
+</header>
+
+<!--主内容区-->
+<div class="main-content">
+    <div class="ipay-bg-regist">
+        <div class="container">
+            <div class="ipay-regin-area">
+                <div class="ipay-reg-tagnav">
+                    <ul class="nav nav-tabs ipay-reg-tagbar">
+                        <li class="ipay-tag-item active" id="step1_tag"><span>1.基本信息</span></li>
+                        <li class="ipay-tag-item" id="step2_tag"><span>2. 邮箱激活</span></li>
+                        <li class="ipay-tag-item" id="step3_tag"><span>3.信息登记</span></li>
+                        <li class="ipay-tag-item" id="step4_tag"><span>4.银行卡信息</span></li>
+                        <li class="ipay-tag-item" id="step5_tag"><span>注册成功</span></li>
+                    </ul>
+                </div>
+                <div class="row ipay-reg-form">
+                    <div id="step1" class="col-xs-12 ipay-step show">
+                        <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-0 col-md-9 col-lg-6 ipay-reg-bd-right ipay-reg-pd-left">
+                            <div class="ipay-info">
+                                <i class="fa fa-info-circle ipay-color-b ipay-info-icon"></i>
+                                <span>每个邮箱仅能申请一个账号</span>
+                            </div>
+                            <form action="/regist">
+                                <div class="form-group">
+                                    <div class="input-group input-group-lg reg-input-box">
+                                        <label for="email">邮箱</label>
+                                        <div class="ipay-input-control">
+                                            <input class="ipay-reg-input" type="email" id="email" name="email" required/><br/>
+                                            <span class="help-block ipay-reg-tips">作为登录帐号，请填写未被注册的邮箱</span>
+                                        </div>
+                                    </div>
+                                    <div class="input-group input-group-lg reg-input-box">
+                                        <label for="password">密码</label>
+                                        <div class="ipay-input-control">
+                                            <input class="ipay-reg-input" type="password" id="password" name="password" required/><br/>
+                                            <span class="help-block ipay-reg-tips">字母、数字或者英文符号，最短8位，区分大小写</span>
+                                        </div>
+                                    </div>
+                                    <div class="input-group input-group-lg reg-input-box">
+                                        <label for="reconfirm">确认密码</label>
+                                        <div class="ipay-input-control">
+                                            <input class="ipay-reg-input" type="password" id="reconfirm" name="reconfirm" required/><br/>
+                                            <span class="help-block ipay-reg-tips">请再次输入密码</span>
+                                        </div>
+                                    </div>
+                                    <div class="input-group input-group-lg reg-input-box reg-check-box">
+                                        <input class="checkbox checkbox-inline ipay-checkbox-input" type="checkbox" id="promiseAgree" name="promiseAgree" required/>
+                                        <span for="promiseAgree">点击同意</span><span>《<a
+                                            href="#">用户协议</a>》和《<a href="#">隐私权保护规则</a>》</span>
+                                    </div>
+                                    <div class="ipay-form-btn-area reg-input-box">
+                                        <div class="ipay-reg-bd-top">
+                                            <input class="btn btn-primary reg-submit-btn" type="button" value="注册"/>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-xs-10 col-xs-offset-1 col-sm-4 col-sm-offset-0 col-md-3 col-lg-6 ipay-reg-pd-left">
+                            <p>已有账户？<a href="./login.html">立即登录</a></p>
+                        </div>
+                    </div>
+
+                    <div id="step2" class="col-xs-12 ipay-step">
+                        <div class="reg-step-2-form">
+                            <div class="reg-step-2-info">
+                                <span class="fa fa-envelope ipay-step-2-icon"></span>
+
+                                <h2 class="ipay-step-2-title">激活商户账号</h2>
+                                <p class="ipay-step-2-thanks">感谢注册！确认邮件已发送至你的注册邮箱，请进入邮箱查看邮件，并激活账号。</p>
+                                <p class="ipay-step-2-sureemail">
+                                    没有收到邮件？<br/>
+                                    1.请检查邮箱地址是否正确，你可以返回 <a class="ipay-step-2-reinput" href="./regist.html">重新填写</a> <br/>
+                                    2.检查你的邮件垃圾箱
+                                </p>
+                                <input type="button" class="btn btn-primary ipay-step-2-btn" value="继续填写信息" />
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="step3" class="col-xs-12 ipay-step">
+                        <div class="col-xs-10 reg-step-3-form">
+
+                            <form class="form-horizontal">
+                                <fieldset>
+                                    <div class="ipay-legend">
+                                        <legend class="">商户信息登记</legend>
+                                    </div>
+                                    <div class="form-group ipay-reg-form-row">
+                                        <label class="control-label ipay-input-label" for="businessuserNane"><span>商户姓名</span></label>
+                                        <div class="controls ipay-input-control">
+                                            <input type="text" id="businessuserNane" name="businessuserNane" class="ipay-reg-input">
+                                            <p class="help-block">请输入您的真实公司法人姓名</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group ipay-reg-form-row">
+                                        <label class="control-label ipay-input-label" for="mobilphoneNumber"><span>手机号码</span></label>
+                                        <div class="controls ipay-input-control">
+                                            <input type="text" id="mobilphoneNumber" name="mobilphoneNumber" class="ipay-reg-input">
+                                            <p class="help-block">请输入您有效手机号码</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group ipay-reg-form-row">
+                                        <label class="control-label ipay-input-label" for="telphoneNumber"><span>固定电话</span></label>
+                                        <div class="controls ipay-input-control">
+                                            <input type="text" id="telphoneNumber" name="telphoneNumber" class="ipay-reg-input">
+                                            <p class="help-block">请输入您有效电话号码</p>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="ipay-legend">
+                                        <legend class="">公司信息登记</legend>
+                                    </div>
+                                    <div class="form-group ipay-reg-form-row">
+                                        <label class="control-label ipay-input-label" for="companyName"><span>公司名称</span></label>
+                                        <div class="controls ipay-input-control">
+                                            <input type="text" id="companyName" name="companyName" class="ipay-reg-input">
+                                            <p class="help-block">请输入公司全称</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group ipay-reg-form-row">
+                                        <label class="control-label ipay-input-label"><span>省份</span></label>
+                                        <div class="controls ipay-input-control">
+
+                                            <select id="province" name="province" class="ipay-reg-input">
+                                                <option>Enter</option>
+                                                <option>Your</option>
+                                                <option>Options</option>
+                                                <option>Here!</option>
+                                            </select>
+                                            <p class="help-block">请输入您所在的省份</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group ipay-reg-form-row">
+                                        <label class="control-label ipay-input-label"><span>城市</span></label>
+                                        <div class="controls ipay-input-control">
+
+                                            <select id="city" name="city" class="ipay-reg-input">
+                                                <option>Enter</option>
+                                                <option>Your</option>
+                                                <option>Options</option>
+                                                <option>Here!</option>
+                                            </select>
+                                            <p class="help-block">请输入您所在的城市</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group ipay-reg-form-row">
+                                        <label class="control-label ipay-input-label" for="detailAddress"><span>详细地址</span></label>
+                                        <div class="controls ipay-input-control">
+                                            <input type="text" id="detailAddress" name="detailAddress" class="ipay-reg-input">
+                                            <p class="help-block">请输入您当前详细办公地址</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group ipay-reg-form-row">
+                                        <div class="controls ipay-input-control">
+                                            <div class="ipay-reg-submit-width">
+                                                <input type="button" class="btn btn-primary ipay-step-3-btn pull-right" value="继续">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </fieldset>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div id="step4" class="col-xs-12 ipay-step">
+                        <div class="col-xs-10 reg-step-4-form">
+
+                            <form class="form-horizontal">
+                                <fieldset>
+                                    <div class="ipay-legend">
+                                        <legend class="">银行卡信息登记</legend>
+                                    </div>
+                                    <div class="form-group ipay-reg-form-row">
+                                        <label class="control-label ipay-input-label" for="bankName"><span>银行名称</span></label>
+                                        <div class="controls ipay-input-control">
+                                            <input type="text" id="bankName" name="bankName" class="ipay-reg-input">
+                                            <p class="help-block">请输入您的开户银行名称</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group ipay-reg-form-row">
+                                        <label class="control-label ipay-input-label"><span>开户行省份</span></label>
+                                        <div class="controls ipay-input-control">
+                                            <!--<input type="text" class="input-xlarge">-->
+                                            <select id="bankProvince" name="bankProvince" class="ipay-reg-input">
+                                                <option>Enter</option>
+                                                <option>Your</option>
+                                                <option>Options</option>
+                                                <option>Here!</option>
+                                            </select>
+                                            <p class="help-block">请输入您开户行所在的省份</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group ipay-reg-form-row">
+                                        <label class="control-label ipay-input-label"><span>开户行城市</span></label>
+                                        <div class="controls ipay-input-control">
+                                            <!--<input type="text" class="input-xlarge">-->
+                                            <select id="bankCity" name="bankCity" class="ipay-reg-input">
+                                                <option>Enter</option>
+                                                <option>Your</option>
+                                                <option>Options</option>
+                                                <option>Here!</option>
+                                            </select>
+                                            <p class="help-block">请输入您开户行所在的城市</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group ipay-reg-form-row">
+                                        <label class="control-label ipay-input-label" for="bankaccountNumber"><span>卡号</span></label>
+                                        <div class="controls ipay-input-control">
+                                            <input type="text" id="bankaccountNumber" name="bankaccountNumber" class="ipay-reg-input">
+                                            <p class="help-block">请输入您的有效银行卡号</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group ipay-reg-form-row">
+                                        <label class="control-label ipay-input-label" for="bankUserName"><span>开户名</span></label>
+                                        <div class="controls ipay-input-control">
+                                            <input type="text" id="bankUserName" name="bankUserName" class="ipay-reg-input">
+                                            <p class="help-block">请输入持卡人的真实姓名</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group ipay-reg-form-row">
+                                        <div class="controls ipay-input-control">
+                                            <div class="ipay-reg-submit-width">
+                                                <input type="button" class="btn btn-primary ipay-step-4-btn pull-right" value="继续">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </fieldset>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div id="step5" class="col-xs-12 ipay-step">
+                        <div class="ipay-step-5-area">
+                            <p class="ipay-step-5-title">注册成功！我们会在3个工作日内与您联系。</p>
+                            <a href="./login.html">
+                                <input type="button" class="btn btn-primary ipay-step-5-btn" value="立即登录" />
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="panel-footer">
+    <div class="container text-center">
+        <ul class="list-unstyled list-inline foot-nav">
+            <li><a href="./about.html" target="_blank">关于iPayLinks</a></li>
+            <li><a href="./contactus.html" target="_blank">联系我们</a></li>
+            <li><a href="./servicecentral.html" target="_blank">服务中心</a></li>
+            <li><a href="./securitycentral.html" target="_blank">安全中心</a></li>
+            <li>
+                <img style="width: 100px;height: 25px; margin-right:20px" src="../images/ipaylinks.png" alt="ipaylinks"/>
+                <span>Copyright©2014-2016 iPayLinks All Rights Reserved</span>
+            </li>
+        </ul>
+    </div>
+</footer>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="../js/jquery.min.js"></script>
+<!-- 引入 bootstrap -->
+<script rel="script" src="../js/bootstrap.min.js"></script>
+<script>
+
+    $('.reg-submit-btn').click(function(e){
+        // 这里需要拿到注册表单进行校验
+        $('.ipay-tag-item').removeClass('active');
+        $('#step2_tag').addClass('active');
+        $('.ipay-step').removeClass('show');
+        $('#step2').addClass('show');
+    })
+
+    $('.ipay-step-2-btn').click(function(e){
+        $('.ipay-tag-item').removeClass('active');
+        $('#step3_tag').addClass('active');
+        $('.ipay-step').removeClass('show');
+        $('#step3').addClass('show');
+    })
+
+    $('.ipay-step-3-btn').click(function(e){
+        $('.ipay-tag-item').removeClass('active');
+        $('#step4_tag').addClass('active');
+        $('.ipay-step').removeClass('show');
+        $('#step4').addClass('show');
+    })
+
+    $('.ipay-step-4-btn').click(function(e){
+        $('.ipay-tag-item').removeClass('active');
+        $('#step5_tag').addClass('active');
+        $('.ipay-step').removeClass('show');
+        $('#step5').addClass('show');
+    })
+</script>
+</body>
+</html>

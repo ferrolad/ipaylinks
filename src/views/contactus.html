@@ -1,0 +1,205 @@
+<!DOCTYPE html >
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="renderer" content="webkit">
+    <title>iPaylinks - 您的信赖是我们永恒的追求</title>
+    <meta name="keywords" content="IpayLinks,跨境金融,跨境支付">
+    <meta name="descrption" content="iPayLinks 您可信赖的跨境金融专家，我们致力于跨境商业上下游生态圈体系，定制行业级解决方案和本地化支持服务，提供营销引擎和物流供应链引擎支持。一站式全方位服务 助力企业开拓全球市场，PCI-DSS认证 KYC准入 保证安全是我们的首要任务">
+    <meta name="author" content="iPayLinks denmark">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <link rel="shortcut icon" href="https://www.ipaylinks.com/wp-content/uploads/2015/05/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/ipaylinks.css"/>
+    <!--引用百度地图API-->
+    <style type="text/css">
+        html,body{margin:0;padding:0;}
+        .iw_poi_title {color:#CC5522;font-size:14px;font-weight:bold;overflow:hidden;padding-right:13px;white-space:nowrap}
+        .iw_poi_content {font:12px arial,sans-serif;overflow:visible;padding-top:4px;white-space:-moz-pre-wrap;word-wrap:break-word}
+    </style>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?key=&v=1.1&services=true"></script>
+    <style>
+        /*自定义样式*/
+    </style>
+</head>
+
+<body>
+<!-- 头部start -->
+<header class="header navbar navbar-fixed-top status-2">
+    <div class="navbar-fixed-top hidden-xs header-top"></div>
+    <div class="container">
+        <div class="navbar-header">
+            <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="../views/index.html">
+                <img style="width: 100px;height: 25px" src="../images/ipaylinks_2.png" alt="ipaylinks"/>
+            </a>
+        </div>
+        <div class="navbar-collapse collapse ipay-pull-right" role="navigation">
+            <ul class="nav navbar-nav text-center status-2">
+                <li><a href="./index.html">首页</a></li>
+                <li><a href="./about.html">关于我们</a></li>
+                <li><a href="./servicecentral.html">服务中心</a></li>
+                <li><a href="./securitycentral.html">安全中心</a></li>
+                <li><a href="./regist.html" target="_blank">注册</a></li>
+                <li><a href="./login.html">登录</a></li>
+                <li><a href="#?lang=en">English</a></li>
+            </ul>
+        </div>
+    </div>
+</header>
+
+<!--主内容区-->
+<div class="main-content">
+    <div class="container">
+        <div class="contact-us row">
+            <div class="col-md-3 contact-left">
+                <h1 class="contact-title">联系我们</h1>
+            </div>
+
+            <div class="col-md-9 contact-right">
+                <p>
+                    <span class="ipay-map-marker"></span>
+                    <span>上海市浦东新区商城路518号内外联大厦18层B座</span>
+                </p>
+                <p>
+                    <span class="ipay-call-icon"></span>
+                    <span>+ 86 21 5182 7986</span>
+                </p>
+                <p>
+                    <span class="ipay-email-icon"></span>
+                    <span>business@ipaylinks.com</span>
+                </p>
+
+                <!--百度地图容器-->
+                <div id="dituContent"></div>
+            </div>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+<footer class="panel-footer status-2">
+    <div class="container text-center">
+        <ul class="list-unstyled list-inline foot-nav status-2">
+            <li><a href="./about.html" target="_blank">关于iPayLinks</a></li>
+            <li><a href="./contactus.html" target="_blank">联系我们</a></li>
+            <li><a href="./servicecentral.html" target="_blank">服务中心</a></li>
+            <li><a href="./securitycentral.html" target="_blank">安全中心</a></li>
+            <li>
+                <img style="width: 100px;height: 25px; margin-right:20px" src="../images/ipaylinks_2.png" alt="ipaylinks"/>
+                <span>Copyright©2014-2016 iPayLinks All Rights Reserved</span>
+            </li>
+        </ul>
+    </div>
+</footer>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="../js/jquery.min.js"></script>
+<!-- 引入 bootstrap -->
+<script rel="script" src="../js/bootstrap.min.js"></script>
+<script type="text/javascript">
+    //创建和初始化地图函数：
+    function initMap(){
+        createMap();//创建地图
+        setMapEvent();//设置地图事件
+        addMapControl();//向地图添加控件
+        addMarker();//向地图中添加marker
+    }
+
+    //创建地图函数：
+    function createMap(){
+        var map = new BMap.Map("dituContent");//在百度地图容器中创建一个地图
+        var point = new BMap.Point(121.52358,31.235917);//定义一个中心点坐标
+        map.centerAndZoom(point,18);//设定地图的中心点和坐标并将地图显示在地图容器中
+        window.map = map;//将map变量存储在全局
+    }
+
+    //地图事件设置函数：
+    function setMapEvent(){
+        map.enableDragging();//启用地图拖拽事件，默认启用(可不写)
+        map.enableScrollWheelZoom();//启用地图滚轮放大缩小
+        map.enableDoubleClickZoom();//启用鼠标双击放大，默认启用(可不写)
+        map.enableKeyboard();//启用键盘上下左右键移动地图
+    }
+
+    //地图控件添加函数：
+    function addMapControl(){
+    }
+
+    //标注点数组
+    var markerArr = [{title:"我的标记",content:"上海市浦东新区商城路518号内外联大厦18层B座",point:"121.523589|31.23584",isOpen:0,icon:{w:23,h:25,l:46,t:21,x:9,lb:12}}
+    ];
+    //创建marker
+    function addMarker(){
+        for(var i=0;i<markerArr.length;i++){
+            var json = markerArr[i];
+            var p0 = json.point.split("|")[0];
+            var p1 = json.point.split("|")[1];
+            var point = new BMap.Point(p0,p1);
+            var iconImg = createIcon(json.icon);
+            var marker = new BMap.Marker(point,{icon:iconImg});
+            var iw = createInfoWindow(i);
+            var label = new BMap.Label(json.title,{"offset":new BMap.Size(json.icon.lb-json.icon.x+10,-20)});
+            marker.setLabel(label);
+            map.addOverlay(marker);
+            label.setStyle({
+                borderColor:"#808080",
+                color:"#333",
+                cursor:"pointer"
+            });
+
+            (function(){
+                var index = i;
+                var _iw = createInfoWindow(i);
+                var _marker = marker;
+                _marker.addEventListener("click",function(){
+                    this.openInfoWindow(_iw);
+                });
+                _iw.addEventListener("open",function(){
+                    _marker.getLabel().hide();
+                })
+                _iw.addEventListener("close",function(){
+                    _marker.getLabel().show();
+                })
+                label.addEventListener("click",function(){
+                    _marker.openInfoWindow(_iw);
+                })
+                if(!!json.isOpen){
+                    label.hide();
+                    _marker.openInfoWindow(_iw);
+                }
+            })()
+        }
+    }
+    //创建InfoWindow
+    function createInfoWindow(i){
+        var json = markerArr[i];
+        var iw = new BMap.InfoWindow("<b class='iw_poi_title' title='" + json.title + "'>" + json.title + "</b><div class='iw_poi_content'>"+json.content+"</div>");
+        return iw;
+    }
+    //创建一个Icon
+    function createIcon(json){
+        var icon = new BMap.Icon("http://app.baidu.com/map/images/us_mk_icon.png", new BMap.Size(json.w,json.h),{imageOffset: new BMap.Size(-json.l,-json.t),infoWindowOffset:new BMap.Size(json.lb+5,1),offset:new BMap.Size(json.x,json.h)})
+        return icon;
+    }
+
+    initMap();//创建和初始化地图
+</script>
+</body>
+</html>
