@@ -6,7 +6,7 @@ then, run the script in term:
 
 ```
 npm install
-gulp dev»òÕßgulp build
+gulp dev或者gulp build
 
 ```
 
