@@ -75,13 +75,14 @@ body{
 .nav>li>a:hover,
 .nav>li.active>a{
     background: #ffffff;
-    color: orange;
+    color: #0077AB;
 }
 
 .nav.status-2>li>a:focus,
 .nav.status-2>li>a:hover,
 .nav.status-2>li.active>a{
     background: #0070BA;
+    color: #CCCCCC;
 }
 
 .nav>li.login-first-reg{
@@ -120,10 +121,14 @@ footer.panel-footer{
     line-height: 25px;
     margin-top: 5px;
 }
+.foot-nav>li{
+    padding-left: 0px;
+    padding-right: 0px;
+}
 .foot-nav>li>a {
     color: #333333;
     width: auto;
-    margin: auto 10px;
+    margin: auto 0px;
     padding-left: 0px;
     padding-right: 0px;
     /*text-decoration: none;*/
@@ -136,7 +141,7 @@ footer.panel-footer{
     .foot-nav>li>a {
         color: #333333;
         width: auto;
-        margin: auto 20px;
+        margin: auto 16px;
         padding-left: 0px;
         padding-right: 0px;
         /*text-decoration: none;*/
@@ -150,7 +155,7 @@ footer.panel-footer{
     .foot-nav>li>a {
         color: #333333;
         width: auto;
-        margin: auto 22px;
+        margin: auto 20px;
         padding-left: 0px;
         padding-right: 0px;
         /*text-decoration: none;*/
@@ -215,6 +220,7 @@ footer.panel-footer.status-2{
 
 /*index.html*/
 .ipay-bg-business{
+    min-height: 710px;
     padding: 60px 0 35px;
     margin-bottom: 0;
     background-image: url("../images/bg_business.jpg");
@@ -251,7 +257,7 @@ footer.panel-footer.status-2{
     font-weight: 300;
 }
 .ipay-pci{
-    width: 154px;
+    width: 284px;
     text-align: left;
     font-size: 12px;
 }
@@ -261,8 +267,17 @@ footer.panel-footer.status-2{
     }
 }
 .ipay-pci-img{
-    width: 154px;
-    height: 203px;
+    width: 284px;
+    height: auto;
+}
+.ipay-about-btn{
+    display: block;
+    color: #FFFFFF;
+}
+
+.ipay-about-btn:hover{
+    color: #FFFFFF;
+    text-decoration: none;
 }
 
 /*描述点的样式定义*/
@@ -334,7 +349,7 @@ footer.panel-footer.status-2{
     font-family: '思源黑体 CN Light', '思源黑体 CN';
     font-weight: 100;
     font-style: normal;
-    font-size: 24px;
+    font-size: 20px;
     padding: 0px;
     line-height: 28px;
     margin: 0px;
@@ -349,7 +364,7 @@ footer.panel-footer.status-2{
     color: #FFFFFF;
     background-color: rgba(255, 255, 255, 0);
     box-sizing: border-box;
-    border: 1px solid rgba(255, 255, 255, 1);
+    border: 1px solid rgba(255, 255, 255, 0.5);
     border-radius: 5px;
     text-decoration: none;
 }
@@ -362,7 +377,7 @@ footer.panel-footer.status-2{
     font-family: '思源黑体 CN Light', '思源黑体 CN';
     font-weight: 300;
     font-style: normal;
-    font-size: 32px;
+    font-size: 26px;
 }
 /*安全支付样式定义*/
 .ipay-safe-pay{
@@ -373,6 +388,12 @@ footer.panel-footer.status-2{
     background-repeat: no-repeat;
     background-position: center center;
 }
+@media screen and (min-width: 520px){
+    .ipay-cross-btn{
+        border: 1px solid rgba(255, 255, 255, 1);
+    }
+}
+
 @media screen and (max-width: 767px){
     .ipay-safe-pay > .container{
         color: #0070BA;
@@ -380,7 +401,10 @@ footer.panel-footer.status-2{
 }
 @media screen and (min-width:768px) {
     .ipay-h2 {
-        font-size: 36px;
+        font-size: 32px;
+    }
+    .ipay-cross-p{
+        font-size: 22px;
     }
     .ipay-cross-pay{
         padding: 70px 0 193px;
@@ -392,6 +416,9 @@ footer.panel-footer.status-2{
 @media screen and (min-width:992px) {
     .ipay-h2 {
         font-size: 42px;
+    }
+    .ipay-cross-p{
+        font-size: 24px;
     }
     .ipay-cross-pay{
         padding: 70px 0 293px;
@@ -451,6 +478,7 @@ footer.panel-footer.status-2{
     margin: 0px;
     margin-top: -1px;
 }
+
 .form-input-box>label{
     background-color: transparent;
     border: none;
@@ -467,7 +495,7 @@ footer.panel-footer.status-2{
     border-radius: 5px;
 }
 .form-input-box .ipay-input{
-    border-left: 1px solid red;
+    /*border-left: 1px solid red;*/
     border: none;
     position: absolute;
     left: 55px;
@@ -476,6 +504,19 @@ footer.panel-footer.status-2{
     padding-left: 2px;
     font-size: 13px;
     border-radius: 0px;
+}
+
+
+@media screen and (max-width: 520px){
+    .login-form{
+        width: 290px;
+    }
+    .login-form .form-input-box{
+        width: 226px;
+    }
+    .form-input-box .ipay-input{
+        width: 169px;
+    }
 }
 .form-input-box .ipay-input-validate{
     width: 150px;
@@ -1028,6 +1069,7 @@ footer.panel-footer.status-2{
     line-height: 20px;
 }
 .ipay-btn-item{
+    display: block;
     cursor: pointer;
     margin: 25px 0 160px;
     width: 159px;
@@ -1043,11 +1085,26 @@ footer.panel-footer.status-2{
 .ipay-btn-item:hover{
     background-color: #0070BA;
     color: #FFFFFF;
+    text-decoration: none;
 }
 .ipay-item .item-img{
     width: 368px;
-    height: 250px
+    height: 250px;
 }
+
+
+@media screen and (max-width: 420px){
+    .ipay-item{
+        width: 300px;
+        margin: 0 auto;
+        text-align: left;
+    }
+    .ipay-item .item-img{
+        width: 300px;
+        height: 203px;
+    }
+}
+
 
 .ipay-develop{
     padding-bottom: 20px;
@@ -1190,6 +1247,31 @@ footer.panel-footer.status-2{
     margin-top: 15px;
 }
 
+@media screen and (max-width: 420px){
+    .contact-right #dituContent{
+        margin-left: -40px;
+        width:300px;
+        height:168px;
+        border: #a1a1a1 solid 2px;
+        padding: 2px;
+        background-color: #FFFFFF;
+        border-radius: 8px;
+        margin-top: 15px;
+    }
+}
+
+@media screen and (min-width: 420px)and (max-width: 580px){
+    .contact-right #dituContent{
+        margin-left: -20px;
+        width:380px;
+        height:213px;
+        border: #a1a1a1 solid 2px;
+        padding: 2px;
+        background-color: #FFFFFF;
+        border-radius: 8px;
+        margin-top: 15px;
+    }
+}
 
 /*securitycentral.html and servicecentral.html*/
 
