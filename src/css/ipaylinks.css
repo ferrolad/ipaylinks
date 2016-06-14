@@ -261,8 +261,13 @@ footer.panel-footer.status-2{
     text-align: left;
     font-size: 12px;
 }
-@media screen and (max-width:520px) {
+@media screen and (max-width:520px){
+    .ipay-bg-business {
+        min-height: 450px;
+        background-image: url("../images/bg_business_2.jpg");
+    }
     .ipay-pci {
+        display: none;
         margin: 0px auto;
     }
 }
@@ -373,6 +378,23 @@ footer.panel-footer.status-2{
     text-decoration: none;
     background-color:rgba(228, 228, 228, 0.5);
 }
+.ipay-cross-btn-mobile{
+    color: #0070BA;
+}
+.ipay-cross-btn:hover{
+    color: #0070BA;
+    text-decoration: none;
+    background-color:rgba(228, 228, 228, 0.5);
+}
+
+@media screen and (max-width: 520px){
+    .ipay-cross-btn-mobile{
+        color: #FFFFFF;
+        border: 1px solid #0070BA;
+        background-color: #0070BA;
+    }
+}
+
 .ipay-h2{
     font-family: '思源黑体 CN Light', '思源黑体 CN';
     font-weight: 300;
