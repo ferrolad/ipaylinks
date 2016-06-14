@@ -122,8 +122,8 @@ footer.panel-footer{
     margin-top: 5px;
 }
 .foot-nav>li{
-    padding-left: 0px;
-    padding-right: 0px;
+    padding-left: 4px;
+    padding-right: 4px;
 }
 .foot-nav>li>a {
     color: #333333;
@@ -971,6 +971,20 @@ footer.panel-footer.status-2{
     background-position: -21px 0;
     background-size: cover;
 }
+
+@media screen and (max-width: 520px){
+    .ipay-introduce>.title{
+        font-size: 36px;
+    }
+    .ipay-introduce .title>span{
+        line-height: 50px;
+    }
+    .ipay-introduce .title .ipaylinks-title{
+        width: 128px;
+        height: 30px;
+        background-position: -8px 0;
+    }
+}
 .ipay-introduce .content{
     margin-top: 55px;
     font-family: '思源黑体 CN Light', '思源黑体 CN';
@@ -1169,6 +1183,13 @@ footer.panel-footer.status-2{
     line-height: 90px;
     margin-bottom: 30px;
 }
+@media screen and (max-width: 520px){
+    .year-label{
+        font-size: 70px;
+        height: 70px;
+        line-height: 70px;
+    }
+}
 .month-label{
     position: absolute;
     left: 0%;
@@ -1275,9 +1296,11 @@ footer.panel-footer.status-2{
 
 /*securitycentral.html and servicecentral.html*/
 
-.ipay-introduce>.title>span{
+/*
+.ipay-introduce .title>span{
     line-height: 70px;
 }
+*/
 
 .ipay-service{
     padding-bottom: 105px;
@@ -1313,6 +1336,16 @@ footer.panel-footer.status-2{
 .item-img{
     width: 333px;
     height: 222px;
+}
+
+@media screen and (max-width: 520px){
+    .service-item{
+        width: 300px;
+    }
+    .item-img{
+        width: 300px;
+        height: 200px;
+    }
 }
 
 @media screen and (min-width: 992px)and (max-width: 1280px){
