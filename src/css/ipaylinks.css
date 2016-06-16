@@ -236,14 +236,23 @@ footer.panel-footer.status-2{
     font-size: 32px;
     color: #0070BA;
 }
+.ipay-h1-en{
+    font-size: 30px;
+}
 @media screen and (min-width:768px) {
     .ipay-h1 {
         font-size: 36px;
+    }
+    .ipay-h1-en{
+        font-size: 32px;
     }
 }
 @media screen and (min-width:992px) {
     .ipay-h1 {
         font-size: 42px;
+    }
+    .ipay-h1-en{
+        font-size: 36px;
     }
 }
 .ipay-btn{
@@ -1088,6 +1097,7 @@ footer.panel-footer.status-2{
     .ipay-item:nth-of-type(2n+0){
         margin: 0px;
         margin-left: 35px;
+        float: right;
     }
 }
 
@@ -1348,6 +1358,7 @@ footer.panel-footer.status-2{
     margin-bottom: 25px;
     font-size: 26px;
 }
+
 .service-item>p{
     margin-top: 30px;
     font-weight: 100;
@@ -1382,5 +1393,13 @@ footer.panel-footer.status-2{
     .item-img{
         width: 300px;
         height: 200px;
+    }
+}
+@media screen and (min-width: 768px){
+    .service-item-en>h3{
+        min-height: 56px;
+    }
+    .service-item-en-more>h3{
+        min-height: 84px;
     }
 }
