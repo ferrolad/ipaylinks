@@ -270,6 +270,9 @@ footer.panel-footer.status-2{
     text-align: left;
     font-size: 12px;
 }
+.ipay-pci-sm{
+    width: 171px;
+}
 @media screen and (max-width:520px){
     .ipay-bg-business {
         min-height: 450px;
@@ -284,6 +287,10 @@ footer.panel-footer.status-2{
     width: 284px;
     height: auto;
 }
+.ipay-pci-sm .ipay-pci-img{
+    width: 171px;
+}
+
 .ipay-about-btn{
     display: block;
     color: #FFFFFF;
@@ -343,6 +350,15 @@ footer.panel-footer.status-2{
     font-style: normal;
     font-size: 28px;
 }
+
+.ipay-desc>div.row>div>h3.h3-en{
+    /*width: 336px;*/
+    /*min-height: 60px;*/
+}
+.ipay-desc>div.row>div>h3.h3-en-more{
+    width: 336px;
+}
+
 .ipay-desc .ipay-safe-icon{
     margin-top: -50px;
     margin-right: 20px;
@@ -388,10 +404,10 @@ footer.panel-footer.status-2{
     background-color:rgba(228, 228, 228, 0.5);
 }
 .ipay-cross-btn-mobile{
-    color: #0070BA;
+    color: #FFFFFF;
 }
-.ipay-cross-btn:hover{
-    color: #0070BA;
+.ipay-cross-btn-mobile:hover{
+    color: #FFFFFF;
     text-decoration: none;
     background-color:rgba(228, 228, 228, 0.5);
 }
@@ -401,6 +417,11 @@ footer.panel-footer.status-2{
         color: #FFFFFF;
         border: 1px solid #0070BA;
         background-color: #0070BA;
+    }
+    .ipay-cross-btn-mobile:hover{
+        color: #FFFFFF;
+        text-decoration: none;
+        background-color:rgba(228, 228, 228, 0.5);
     }
 }
 
