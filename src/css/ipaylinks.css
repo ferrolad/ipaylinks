@@ -1134,6 +1134,7 @@ footer.panel-footer.status-2{
     margin-top: 36px;
     font-size: 14px;
     line-height: 20px;
+    min-height: 140px;
 }
 .ipay-btn-item{
     display: block;
