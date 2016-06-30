@@ -229,7 +229,7 @@ footer.panel-footer.status-2{
     background-position: center center;
 }
 .ipay-h1{
-    margin-top: 115px;
+    margin-top: 185px;
     font-family:  '思源黑体', 'Microsoft YaHei', "微软雅黑", 'STHeiti', "华文细黑", 'STHeiti Light', 'Hiragino Sans GB', 'San-serif';
     font-weight: 300;
     font-style: normal;
@@ -237,7 +237,7 @@ footer.panel-footer.status-2{
     color: #0070BA;
 }
 .ipay-h1-en{
-    margin-top: 155px;
+    margin-top: 185px;
     font-size: 30px;
 }
 @media screen and (min-width:768px) {
@@ -1264,6 +1264,12 @@ footer.panel-footer.status-2{
 .year-develop-en .month-label{
     width: 100px;
     margin-left: -50px;
+}
+.year-develop-en>p{
+    padding-right: 60px;
+}
+.year-develop-en>p:nth-of-type(2n+1){
+    padding-left: 60px;
 }
 
 /*contactus.html*/
