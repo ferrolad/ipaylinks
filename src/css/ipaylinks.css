@@ -4,16 +4,16 @@
  *  License - (Font: SIL OFL 1.1, CSS: MIT License)
  */
 @font-face{
-    font-family:'SourceHanSansCN';
+    font-family:'思源黑体';
     src:url(../fonts/SourceHanSansCN-Light.otf);
     src:url(../fonts/SourceHanSansCN-ExtraLight.otf);
     src:url(../fonts/SourceHanSansCN-Normal.otf)
 }
 body{
-    font-family: '思源黑体 CN Light', '思源黑体 CN', "SourceHanSansCN";
+    font-family: '思源黑体', 'Microsoft YaHei', "微软雅黑", 'STHeiti', "华文细黑", 'STHeiti Light', 'Hiragino Sans GB', 'San-serif';
 }
 .loginreg-font{
-    font-family: '微软雅黑 Regular', '微软雅黑';
+    font-family: 'Microsoft YaHei', "微软雅黑", 'STHeiti', "华文细黑";
 }
 .color-white{
     color: #FFFFFF;
@@ -112,7 +112,7 @@ body{
 /*footer样式定义*/
 footer.panel-footer{
     background-color: #FFFFFF;
-    font-family: '思源黑体 CN ExtraLight', '思源黑体 CN';
+    font-family:  '思源黑体', 'Microsoft YaHei', "微软雅黑", 'STHeiti', "华文细黑", 'STHeiti Light', 'Hiragino Sans GB', 'San-serif';
 }
 .foot-nav{
     height: auto;
@@ -230,13 +230,14 @@ footer.panel-footer.status-2{
 }
 .ipay-h1{
     margin-top: 115px;
-    font-family: '思源黑体 CN Light', '思源黑体 CN';
+    font-family:  '思源黑体', 'Microsoft YaHei', "微软雅黑", 'STHeiti', "华文细黑", 'STHeiti Light', 'Hiragino Sans GB', 'San-serif';
     font-weight: 300;
     font-style: normal;
     font-size: 32px;
     color: #0070BA;
 }
 .ipay-h1-en{
+    margin-top: 155px;
     font-size: 30px;
 }
 @media screen and (min-width:768px) {
@@ -303,7 +304,7 @@ footer.panel-footer.status-2{
 
 /*描述点的样式定义*/
 .ipay-desc{
-    font-family: '思源黑体 CN Light', '思源黑体 CN';
+    font-family:  '思源黑体', 'Microsoft YaHei', "微软雅黑", 'STHeiti', "华文细黑", 'STHeiti Light', 'Hiragino Sans GB', 'San-serif';
     font-weight: 300;
     font-style: normal;
     font-size: 14px;
@@ -376,7 +377,7 @@ footer.panel-footer.status-2{
     background-position: center center;
 }
 .ipay-cross-p{
-    font-family: '思源黑体 CN Light', '思源黑体 CN';
+    font-family:  '思源黑体', 'Microsoft YaHei', "微软雅黑", 'STHeiti', "华文细黑", 'STHeiti Light', 'Hiragino Sans GB', 'San-serif';
     font-weight: 100;
     font-style: normal;
     font-size: 20px;
@@ -426,7 +427,7 @@ footer.panel-footer.status-2{
 }
 
 .ipay-h2{
-    font-family: '思源黑体 CN Light', '思源黑体 CN';
+    font-family:  '思源黑体', 'Microsoft YaHei', "微软雅黑", 'STHeiti', "华文细黑", 'STHeiti Light', 'Hiragino Sans GB', 'San-serif';
     font-weight: 300;
     font-style: normal;
     font-size: 26px;
@@ -634,7 +635,7 @@ footer.panel-footer.status-2{
     -moz-box-shadow: none;
     -webkit-box-shadow: none;
     box-shadow: none;
-    font-family: '微软雅黑 Regular', '微软雅黑';
+    font-family: 'Microsoft YaHei', "微软雅黑", 'STHeiti', "华文细黑";
     font-weight: 400;
     font-style: normal;
 }
@@ -1004,7 +1005,7 @@ footer.panel-footer.status-2{
     padding-bottom: 10px;
     border-bottom: 1px solid #0070BA;
     color: #333333;
-    font-family: '思源黑体 CN ExtraLight', '思源黑体 CN';
+    font-family:  '思源黑体', 'Microsoft YaHei', "微软雅黑", 'STHeiti', "华文细黑", 'STHeiti Light', 'Hiragino Sans GB', 'San-serif';
     font-weight: 100;
     font-style: normal;
     font-size: 48px;
@@ -1039,7 +1040,7 @@ footer.panel-footer.status-2{
 }
 .ipay-introduce .content{
     margin-top: 55px;
-    font-family: '思源黑体 CN Light', '思源黑体 CN';
+    font-family:  '思源黑体', 'Microsoft YaHei', "微软雅黑", 'STHeiti', "华文细黑", 'STHeiti Light', 'Hiragino Sans GB', 'San-serif';
     font-weight: 300;
     font-style: normal;
     font-size: 18px;
@@ -1049,7 +1050,7 @@ footer.panel-footer.status-2{
     margin-bottom: 20px;
 }
 .ipay-introduce .content>p>span.padding-large{
-    padding: 0 40px 0 40px;
+    padding: 0 20px 0 20px;
 }
 
 .ipay-target>.content>p{
@@ -1060,7 +1061,7 @@ footer.panel-footer.status-2{
     padding: 100px 0;
     font-weight: 300;
     font-style: normal;
-    font-family: '思源黑体 CN Light', '思源黑体 CN';
+    font-family:  '思源黑体', 'Microsoft YaHei', "微软雅黑", 'STHeiti', "华文细黑", 'STHeiti Light', 'Hiragino Sans GB', 'San-serif';
     font-size: 20px;
     color: #999999;
     display: inline-block;
@@ -1100,7 +1101,7 @@ footer.panel-footer.status-2{
     width: 368px;
     height: auto;
     display: inline-block;
-    font-family: '思源黑体 CN Light', '思源黑体 CN';
+    font-family:  '思源黑体', 'Microsoft YaHei', "微软雅黑", 'STHeiti', "华文细黑", 'STHeiti Light', 'Hiragino Sans GB', 'San-serif';
     text-align: left;
 }
 
@@ -1176,7 +1177,7 @@ footer.panel-footer.status-2{
 
 .ipay-develop{
     padding-bottom: 20px;
-    font-family: '思源黑体 CN ExtraLight', '思源黑体 CN';
+    font-family:  '思源黑体', 'Microsoft YaHei', "微软雅黑", 'STHeiti', "华文细黑", 'STHeiti Light', 'Hiragino Sans GB', 'San-serif';
 }
 .icon-pilot{
     width: 50px;
@@ -1260,6 +1261,10 @@ footer.panel-footer.status-2{
     vertical-align: middle;
 }
 
+.year-develop-en .month-label{
+    width: 100px;
+    margin-left: -50px;
+}
 
 /*contactus.html*/
 .contact-us{
@@ -1367,7 +1372,7 @@ footer.panel-footer.status-2{
     margin: 0 auto;
     height: auto;
     display: inline-block;
-    font-family: '思源黑体 CN Light', '思源黑体 CN';
+    font-family:  '思源黑体', 'Microsoft YaHei', "微软雅黑", 'STHeiti', "华文细黑", 'STHeiti Light', 'Hiragino Sans GB', 'San-serif';
     text-align: left;
     margin-top: 30px;
 }
@@ -1409,7 +1414,7 @@ footer.panel-footer.status-2{
         margin: 0 auto;
         height: auto;
         display: inline-block;
-        font-family: '思源黑体 CN Light', '思源黑体 CN';
+        font-family:  '思源黑体', 'Microsoft YaHei', "微软雅黑", 'STHeiti', "华文细黑", 'STHeiti Light', 'Hiragino Sans GB', 'San-serif';
         text-align: left;
     }
     .item-img{
