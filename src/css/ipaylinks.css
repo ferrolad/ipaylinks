@@ -3,12 +3,12 @@
  *  ipaylinks@v1.0.0 by @denmark
  *  License - (Font: SIL OFL 1.1, CSS: MIT License)
  */
-@font-face{
+/*@font-face{
     font-family:'思源黑体';
     src:url(../fonts/SourceHanSansCN-Light.otf);
     src:url(../fonts/SourceHanSansCN-ExtraLight.otf);
     src:url(../fonts/SourceHanSansCN-Normal.otf)
-}
+}*/
 body{
     font-family: '思源黑体', 'Microsoft YaHei', "微软雅黑", 'STHeiti', "华文细黑", 'STHeiti Light', 'Hiragino Sans GB', 'San-serif';
 }
@@ -1285,9 +1285,25 @@ footer.panel-footer.status-2{
     padding: 5px 0px;
     margin: 0px;
 }
+.contact-left,
 .contact-left h1.contact-title{
     margin-bottom: 30px;
 }
+.contact-left .wx-qrcode{
+    width: 100%;
+}
+.contact-left .wx-qrcode>img{
+    width: 80%;
+    min-width: 165px;
+    max-width: 344px;
+    margin: 0 auto;
+}
+.contact-left .wx-qrcode>p{
+    font-size: 16px;
+    color: #666666;
+    line-height: 28px;
+}
+
 .contact-right{
     text-align: left;
     border-left: 1px solid #0070BA;
@@ -1434,5 +1450,154 @@ footer.panel-footer.status-2{
     }
     .service-item-en-more>h3{
         min-height: 84px;
+    }
+}
+
+/*最新动态*/
+.ipay-news{
+    padding-top: 45px;
+}
+.news-list{
+    list-style: none;
+}
+.news-item{
+    height: 125px;
+    overflow: hidden;
+    margin-bottom: 25px;
+    display: flex;
+}
+.news-item .item-left{
+    width: 75px;
+    height: 125px;
+    background: inherit;
+    background-color: rgba(255, 255, 255, 1);
+    box-sizing: border-box;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgba(204, 204, 204, 1);
+    border-radius: 7px;
+    border-top: 10px solid rgba(204, 204, 204, 1);
+}
+.news-item:hover .item-left{
+    border-color: rgba(219, 241, 253, 1);
+    border-top: 10px solid rgba(31, 160, 232, 1);
+}
+
+.item-left .date-wrapper{
+    text-align: center;
+    color:  #CCCCCC;
+}
+.news-item:hover .date-wrapper{
+    color:  #1FA0E8;
+}
+
+.date-wrapper .date-day{
+    display: block;
+    height: 82px;
+    font-size: 36px;
+    line-height: 75px;
+}
+.date-wrapper .date-ym{
+    border-top: 1px solid rgba(219, 241, 253, 1);
+    padding-top: 8px;
+    font-size: 16px;
+}
+.news-item .item-mid{
+    flex: 1;
+    margin-left: 20px;
+    text-align: left;
+}
+.news-item .item-right{
+    width: 217px;
+    height: 125px;
+    margin-left: 40px;
+}
+.news-item .item-right>img {
+    width: 100%;
+    height: 100%;
+}
+.item-mid .news-title{
+    font-size: 18px;
+    padding: 0px;
+    margin: 0px;
+    text-align: left;
+    color: #333333;
+    height: 20px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    word-break: break-all;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+}
+.item-mid .news-desc{
+    font-size: 13px;
+    margin: 20px 0 15px;
+    height: 52px;
+    text-align: left;
+    color: #666666;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    word-break: break-all;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+.item-mid article{
+    position: relative;
+    height: 125px;
+}
+.item-mid article > a{
+    position: absolute;
+    bottom: 0;
+}
+
+@media screen and (max-width: 991px){
+    .news-item .item-right{
+        display: none;
+    }
+
+    .item-mid .news-title{
+        font-size: 18px;
+        padding: 1px 0px;
+        margin: 0px;
+        text-align: left;
+        color: #333333;
+        height: auto;
+        max-height: 40px;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        word-break: break-all;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+    }
+    .item-mid .news-desc{
+        font-size: 13px;
+        margin: 20px 0 15px;
+        height: 34px;
+        text-align: left;
+        color: #666666;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        word-break: break-all;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+    }
+}
+@media screen and (max-width: 520px) {
+    .news-item .item-left{
+        width: 68px;
+    }
+    .news-item .item-left{
+        border-color: rgba(219, 241, 253, 1);
+        border-top: 10px solid rgba(31, 160, 232, 1);
+    }
+    .news-item .date-wrapper{
+        color:  #1FA0E8;
+    }
+    .ipay-news > .row{
+        margin-top: 40px;
     }
 }
