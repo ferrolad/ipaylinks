@@ -1,12 +1,14 @@
 var gulp = require('gulp');
+var del = require('del');
 var uglify = require('gulp-uglify');
 var runSequence = require('run-sequence');
-var del = require('del');
-var rev = require('gulp-rev');                                  //- 对文件名加MD5后缀
+var minifyCss = require('gulp-minify-css');
+var rev = require('gulp-rev');   
+var useref = require('gulp-useref');  
+var gulpif = require('gulp-if'); 
+// var revReplace = require('gulp-rev-replace');                             //- 对文件名加MD5后缀
 var revCollector = require('gulp-rev-collector');               //- 路径替换
 var autoprefixer = require('gulp-autoprefixer');
-var HTMLMinifier = require("html-minifier").minify;
-var through = require("through2");
 
 const AUTOPREFIXER_BROWSERS = [
   'Android 2.3',
@@ -20,104 +22,108 @@ const AUTOPREFIXER_BROWSERS = [
 ];
 
 gulp.task('clean', function(){
-  del.sync(['build/*'], {
+  del.sync(['./build'], {
     dot: true
   })
 })
 
-gulp.task('bundle', function() {
-  return gulp
-    .src('./src/**')
-    .pipe(gulp.dest('./build'))
+gulp.task('html', function () {
+  function jsProd(file) {
+    return /.*\.js$/.test(file.path)
+  }
+  function cssProd(file) {
+    return /.*\.css$/.test(file.path)
+  }
+
+  return gulp.src('./src/**/*.html')
+    .pipe(useref())
+    // .pipe(gulpif(jsProd, uglify()))
+    // .pipe(gulpif(cssProd, minifyCss()))
+    // .pipe(rev())
+    // .pipe(revReplace())
+    .pipe(gulp.dest('./build'));
+});
+
+//Fonts & Images 根据MD5获取版本号
+gulp.task('revFont', function(){
+    return gulp.src('./src/fonts/*')
+        .pipe(rev())
+        .pipe(gulp.dest('./build/fonts'))
+        .pipe(rev.manifest())
+        .pipe(gulp.dest('./build/rev/fonts'));
+});
+
+gulp.task('revImg', function(){
+    return gulp.src('./src/images/*')
+        .pipe(rev())
+        .pipe(gulp.dest('./build/images'))
+        .pipe(rev.manifest())
+        .pipe(gulp.dest('./build/rev/images'));
+});
+
+//CSS里更新引入文件版本号
+gulp.task('revCss', function () {
+    return gulp.src(['./build/rev/**/*.json', './build/css/combined.css', './build/css/combined-fa.css'])
+        .pipe(rev())
+        .pipe(revCollector()) 
+        .pipe(autoprefixer({
+          browsers: AUTOPREFIXER_BROWSERS
+        }))
+        .pipe(minifyCss())
+        .pipe(gulp.dest('./build/css'))
+        .pipe(rev.manifest()) 
+        .pipe(gulp.dest('./build/rev/css'));
+});
+
+gulp.task('revJs', function () {
+    return gulp.src('./build/js/combined.js')
+        .pipe(rev())
+        .pipe(uglify())
+        .pipe(gulp.dest('./build/js'))
+        .pipe(rev.manifest())
+        .pipe(gulp.dest('./build/rev/js'));
+});
+
+gulp.task('revHtml', function () {
+    return gulp.src(['./build/rev/**/*.json', './build/**/*.html'])
+        .pipe(revCollector()) 
+        .pipe(gulp.dest('./build'));
+});
+
+
+gulp.task('delRevCss', function(){
+    del(['./build/rev/**/*.json', './build/rev', './css', './js']);    
 })
 
-gulp.task('html-press', ['bundle', 'rev-all'], function() {
-  return gulp
-    .src('./build/*.html')
-    .pipe(through.obj(function(file, encode, cb) {
-        var contents = file.contents.toString(encode);
-        
-        var minified = HTMLMinifier(contents, {
-          minifyCSS: true,
-          minifyJS: true,
-          collapseWhitespace: true,
-          removeAttributeQuotes: true
-        });
-
-        file.contents = new Buffer(minified, encode);
-        cb(null, file, encode);
-      }))
-    .pipe(gulp.dest('./build/'))
+gulp.task('build', ['clean'], function(done) {
+    runSequence(
+         ['revFont', 'revImg'],
+         ['html'],
+         ['revCss'],
+         ['revJs'],
+         ['revHtml'],
+         ['delRevCss'],
+    done);
 })
 
-gulp.task('en-html-press', ['bundle', 'rev-all'], function() {
-  return gulp
-    .src('./build/en/*.html')
-    .pipe(through.obj(function(file, encode, cb) {
-        var contents = file.contents.toString(encode);
-        
-        var minified = HTMLMinifier(contents, {
-          minifyCSS: true,
-          minifyJS: true,
-          collapseWhitespace: true,
-          removeAttributeQuotes: true
-        });
-
-        file.contents = new Buffer(minified, encode);
-        cb(null, file, encode);
-      }))
-    .pipe(gulp.dest('./build/en/'))
+gulp.task('dev', function(done) {
+    runSequence(
+         ['revFont', 'revImg'],
+         ['html'],
+         ['revCss'],
+         ['revJs'],
+         ['revHtml'],
+         ['delRevCss'],
+    done);
 })
-
-gulp.task('html-press-all', ['html-press', 'en-html-press'], function() {
-  return gulp
-})
-gulp.task('prefix-css', ['bundle'], function() {
-  return gulp
-    .src('./build/css/*.css')
-    .pipe(autoprefixer({
-      browsers: AUTOPREFIXER_BROWSERS
-    }))
-    .pipe(gulp.dest('./build/css/'))
-})
-
-gulp.task('uglify', ['bundle'], function() {
-  return gulp
-    .src('./build/js/*.js')
-    .pipe(uglify())
-    .pipe(gulp.dest('./build/js/'))
-})
-
-gulp.task('md5-css', ['bundle', 'prefix-css'], function() {                             //- 创建一个名为 concat 的 task
-  return gulp.src('./build/css/ipaylinks.css')                     //- 压缩处理成一行
-      .pipe(rev())                                            //- 文件名加MD5后缀
-      .pipe(gulp.dest('./build/css/'))                        //- 输出文件本地
-      .pipe(rev.manifest())                                   //- 生成一个rev-manifest.json
-      .pipe(gulp.dest('./build/rev/'));                       //- 将 rev-manifest.json 保存到 rev 目录内
-})
-
-gulp.task('rev', ['md5-css'], function() {
-  return  gulp.src(['./build/rev/*.json', './build/*.html'])   //- 读取 rev-manifest.json 文件以及需要进行css名替换的文件
-      .pipe(revCollector())                  //- 执行文件内css名的替换
-      .pipe(gulp.dest('./build/'));                 //- 替换后的文件输出的目录
-})
-
-gulp.task('rev-en', ['md5-css'], function() {
-  return  gulp.src(['./build/rev/*.json', './build/en/*.html'])   //- 读取 rev-manifest.json 文件以及需要进行css名替换的文件
-      .pipe(revCollector())                  //- 执行文件内css名的替换
-      .pipe(gulp.dest('./build/en/'));                 //- 替换后的文件输出的目录
-})
-
-gulp.task('rev-all', ['rev', 'rev-en'],function(){
-  return gulp
-})
-
-gulp.task('build', ['clean', 'bundle', 'rev-all', 'html-press-all', 'prefix-css', 'uglify'])
-
-gulp.task('dev', ['clean', 'bundle', 'rev-all', 'html-press-all', 'prefix-css'])
 
 gulp.task('watch', ['clean'], function() {
-  return gulp
-    .src('./src/**')
-    .pipe(gulp.dest('./build'))
+    runSequence('dev', function () {
+        gulp.watch(['./src/*.html', './src/en/*.html'], ['html', 'revHtml']);
+        gulp.watch('./src/js/*.js', ['revJs', 'revHtml']);
+        gulp.watch('./src/fonts/*', ['revFont', 'revCss', 'revHtml']);
+        gulp.watch('./src/css/*', ['html','revCss', 'revHtml']);
+    });
 })
+
+gulp.task('default', ['clean', 'dev']);
