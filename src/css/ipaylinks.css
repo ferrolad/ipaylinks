@@ -1547,7 +1547,7 @@ footer.panel-footer.status-2{
     position: relative;
     height: 125px;
 }
-.item-mid article > a{
+.item-mid article > a.more-detail{
     position: absolute;
     bottom: 0;
 }
