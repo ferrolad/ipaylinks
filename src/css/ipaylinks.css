@@ -1513,7 +1513,7 @@ footer.panel-footer.status-2{
     margin-left: 40px;
 }
 .news-item .item-right>img {
-    width: 100%;
+    width: auto;
     height: 100%;
 }
 .item-mid .news-title{
