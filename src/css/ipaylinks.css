@@ -1274,9 +1274,10 @@ footer.panel-footer.status-2{
 
 /*contactus.html*/
 .contact-us{
-    width: 100%;
+    max-width: 1060px;
     height: auto;
-    padding: 150px 0;
+    padding: 80px 0;
+    margin: 0 auto;
 }
 .contact-us h1.contact-title{
     font-weight: 100;
@@ -1287,16 +1288,17 @@ footer.panel-footer.status-2{
 }
 .contact-left,
 .contact-left h1.contact-title{
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 .contact-left .wx-qrcode{
     width: 100%;
 }
 .contact-left .wx-qrcode>img{
     width: 80%;
-    min-width: 165px;
-    max-width: 344px;
-    margin: 0 auto;
+    min-width: 145px;
+    max-width: 145px;
+    margin: 25px auto;
+    margin-top: 46px;
 }
 .contact-left .wx-qrcode>p{
     font-size: 16px;
@@ -1309,7 +1311,12 @@ footer.panel-footer.status-2{
     border-left: 1px solid #0070BA;
     padding-left: 55px;
 }
-.contact-right>p{
+.contact-p{
+    height: auto;
+    min-height: 110px;
+    max-height: 130px;
+}
+.contact-right p{
     font-weight: 300;
     font-style: normal;
     font-size: 16px;
@@ -1350,6 +1357,13 @@ footer.panel-footer.status-2{
 }
 
 @media screen and (max-width: 420px){
+    .contact-left .wx-qrcode>img{
+        width: 80%;
+        min-width: 180px;
+        max-width: 220px;
+        margin: 25px auto;
+        margin-top: 46px;
+    }
     .contact-right #dituContent{
         margin-left: -40px;
         width:300px;
@@ -1363,6 +1377,13 @@ footer.panel-footer.status-2{
 }
 
 @media screen and (min-width: 420px)and (max-width: 580px){
+    .contact-left .wx-qrcode>img{
+        width: 80%;
+        min-width: 220px;
+        max-width: 260px;
+        margin: 25px auto;
+        margin-top: 46px;
+    }
     .contact-right #dituContent{
         margin-left: -20px;
         width:380px;
@@ -1372,6 +1393,16 @@ footer.panel-footer.status-2{
         background-color: #FFFFFF;
         border-radius: 8px;
         margin-top: 15px;
+    }
+}
+
+@media screen and (min-width: 581px)and (max-width: 768px){
+    .contact-left .wx-qrcode>img{
+        width: 80%;
+        min-width: 240px;
+        max-width: 280px;
+        margin: 25px auto;
+        margin-top: 46px;
     }
 }
 
@@ -1461,10 +1492,15 @@ footer.panel-footer.status-2{
     list-style: none;
 }
 .news-item{
-    height: 125px;
+    /*height: 125px;*/
     overflow: hidden;
-    margin-bottom: 25px;
+    margin-top: 25px;    
+    padding-bottom: 25px;
     display: flex;
+    border-bottom: 1px solid #cccccc;
+}
+.news-item:last-child{    
+    border-bottom: 1px solid transparent;
 }
 .news-item .item-left{
     width: 75px;
@@ -1512,7 +1548,7 @@ footer.panel-footer.status-2{
     height: 125px;
     margin-left: 40px;
 }
-.news-item .item-right>img {
+.news-item .item-right img {
     width: auto;
     height: 100%;
 }
